@@ -8,39 +8,42 @@
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1.6;
   color: #222;
+  background-color: #ffffff;
 }
 
 /* ===============================
-   SITE HEADING
+   SITE HEADING (HEADER)
 ================================ */
 #site-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: rgba(223, 223, 29, 0.3);
-  color: rgb(4, 71, 82);
+  padding: 24px 40px;
+  background: linear-gradient(135deg, #2c5364, #1f3c48);
+  color: #ffffff;
 }
 
 #site-heading h2 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   font-style: italic;
 }
 
 #short-details {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 #short-details i {
-  color: #df1fb9;
+  color: #00e5ff;
+  font-size: 1.1rem;
 }
 
 /* ===============================
@@ -48,7 +51,7 @@ body {
 ================================ */
 nav {
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 nav ul {
@@ -57,6 +60,10 @@ nav ul {
   list-style: none;
   padding: 14px 0;
   gap: 28px;
+}
+
+nav li {
+  position: relative;
 }
 
 nav a {
@@ -79,7 +86,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: rgb(208, 208, 61);
+  color: #2c5364;
 }
 
 nav a:hover::after {
@@ -87,10 +94,6 @@ nav a:hover::after {
 }
 
 /* Dropdown */
-nav li {
-  position: relative;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -98,13 +101,14 @@ nav li {
   left: 0;
   background: #ffffff;
   min-width: 200px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   z-index: 1000;
 }
 
 .dropdown-menu a {
   display: block;
   padding: 10px 20px;
+  white-space: nowrap;
 }
 
 nav li:hover .dropdown-menu {
@@ -125,7 +129,7 @@ nav li:hover .dropdown-menu {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #services > * {
@@ -153,7 +157,7 @@ nav li:hover .dropdown-menu {
 }
 
 .service-card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   color: #222;
   padding: 30px;
   border-radius: 12px;
@@ -166,7 +170,7 @@ nav li:hover .dropdown-menu {
 }
 
 /* ===============================
-   SECTION 2: FEATURES (IMAGE + OVERLAY)
+   SECTION 2: FEATURES
 ================================ */
 #features {
   position: relative;
@@ -179,7 +183,7 @@ nav li:hover .dropdown-menu {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(44,83,100,0.6);
+  background: rgba(44, 83, 100, 0.6);
 }
 
 #features > * {
@@ -203,7 +207,7 @@ nav li:hover .dropdown-menu {
 
 .feature-card {
   flex: 0 0 calc(50% - 15px);
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   color: #222;
   padding: 30px;
   border-radius: 12px;
@@ -215,7 +219,7 @@ nav li:hover .dropdown-menu {
 ================================ */
 #impact {
   padding: 80px 40px;
-  background-color: rgba(223,223,29,0.3);
+  background-color: rgba(223, 223, 29, 0.3);
 }
 
 .impact-stats,
@@ -229,7 +233,7 @@ nav li:hover .dropdown-menu {
 .stat-card,
 .testimonial-card {
   flex: 1;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 12px;
   text-align: center;
@@ -248,23 +252,103 @@ nav li:hover .dropdown-menu {
    SECTION 5: FOOTER
 ================================ */
 #site-footer {
-  background-color: #2c5364;
+  background-color: #1f3c48;
   color: #ffffff;
-  padding: 60px 40px 20px;
+  padding: 70px 40px 20px;
 }
 
 .footer-top {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto 40px;
 }
 
+#site-footer h3 {
+  color: #00e5ff;
+  margin-bottom: 12px;
+}
+
+#site-footer p,
+#site-footer a {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+#site-footer a {
+  text-decoration: none;
+}
+
+#site-footer a:hover {
+  color: #00e5ff;
+}
+
+/* Footer Form */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-form input,
+.footer-form select,
+.footer-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.footer-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.footer-form button {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #00e5ff;
+  color: #1f3c48;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-form button:hover {
+  background-color: #ffffff;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #00e5ff;
+  color: #1f3c48;
+  transform: translateY(-3px);
+}
+
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 18px;
   font-size: 0.9rem;
 }
 
@@ -272,9 +356,18 @@ nav li:hover .dropdown-menu {
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
-  .services-grid,
-  .features-grid {
+  #site-heading {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    flex-direction: column;
   }
 
   .impact-stats,
