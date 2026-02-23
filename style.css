@@ -1,0 +1,288 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* ===============================
+   SITE HEADING
+================================ */
+#site-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(223, 223, 29, 0.3);
+  color: rgb(4, 71, 82);
+}
+
+#site-heading h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+#short-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+#short-details i {
+  color: #df1fb9;
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+nav {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 14px 0;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #2c5364;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(208, 208, 61);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+nav li {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+}
+
+nav li:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===============================
+   SECTION 1: SERVICES
+================================ */
+#services {
+  position: relative;
+  padding: 80px 40px;
+  background: url("./images/Image_1.png") center/cover no-repeat fixed;
+  color: #ffffff;
+}
+
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+#services > * {
+  position: relative;
+  z-index: 1;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.services-header h2 {
+  font-size: 2.3rem;
+  margin-bottom: 14px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===============================
+   SECTION 2: FEATURES (IMAGE + OVERLAY)
+================================ */
+#features {
+  position: relative;
+  padding: 80px 40px;
+  background: url("./images/Image_2.png") center/cover no-repeat fixed;
+  color: #ffffff;
+}
+
+#features::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(44,83,100,0.6);
+}
+
+#features > * {
+  position: relative;
+  z-index: 1;
+}
+
+.features-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  flex: 0 0 calc(50% - 15px);
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* ===============================
+   SECTION 3: IMPACT
+================================ */
+#impact {
+  padding: 80px 40px;
+  background-color: rgba(223,223,29,0.3);
+}
+
+.impact-stats,
+.testimonials {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.stat-card,
+.testimonial-card {
+  flex: 1;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* ===============================
+   SECTION 4: CTA + PARTNERS
+================================ */
+#cta-partners {
+  padding: 80px 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* ===============================
+   SECTION 5: FOOTER
+================================ */
+#site-footer {
+  background-color: #2c5364;
+  color: #ffffff;
+  padding: 60px 40px 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 16px;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .services-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-stats,
+  .testimonials {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
